@@ -2,16 +2,18 @@
 <input />
 <button>Comparar com o segredo</button>
 <script>
-    var segredo = 5;
-    function verificar(){
+  var segredo = Math.round(Math.random() * 10);
   var input = document.querySelector("input");
-  if(segredo == input.value){
-      alert("Você acertou o número, parabéns!!!");
-  }else(
-      alert("Você errou tente outra vez!")
-  );
-}
-var button = document.querySelector("button");
-button.onclick = verificar;
+  input.focus();
 
+  function verificar() {
+    if (segredo == input.value) {
+      alert("Você acertou o número, parabéns!!!");
+    } else alert("Você errou tente outra vez!");
+    input.value = "";
+    input.focus();
+  }
+  
+  var button = document.querySelector("button");
+  button.onclick = verificar;
 </script>
