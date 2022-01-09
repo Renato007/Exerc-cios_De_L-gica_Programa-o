@@ -1,26 +1,48 @@
 <meta charset="UTF-8" />
 <h1>Jogo - Adivinhe o número</h1>
-<h2>A quatro valores entre 1 até 10 possíveis que serão verificados</h2>
+<h2>Você tem Sorte?</h2>
 <input />
 <button>Comparar com o segredo</button>
 <script>
-  var segredos = [2, 6, 8, 10];
-  //var segredo = Math.round(Math.random() * 10);
+var nivelDificuldade = prompt("Digite a quatidade de valores secretos.\n Aumente suas chances colocando mais. \n Colocando valor menor mais dificil fica.")
+
+
+  function sorteia() {
+    return Math.round(Math.random() * 10);
+  }
+
+  function sorteiaNumeros(quantidades) {
+    var segredos = [];
+    var numero = 1;
+
+    while (numero <= quantidades) {
+      segredos.push(sorteia());
+      numero++;
+    }
+    return segredos;
+  }
+
+  var segredos = sorteiaNumeros(nivelDificuldade);
+console.log(segredos);
   var input = document.querySelector("input");
   input.focus();
 
   function verificar() {
+    var achou = false;
+
     for (posicao = 0; posicao < segredos.length; posicao++) {
       if (input.value == segredos[posicao]) {
         alert("Você acertou o número, parabéns!!!");
+        achou = true;
         break;
-      } else {
-        alert("Errou valor sorteado posição " + (posicao+1));
       }
     }
+    if (achou == false) {
+      alert("Você Errou!");
+    }
 
-      input.value = "";
-      input.focus();
+    input.value = "";
+    input.focus();
   }
 
   var button = document.querySelector("button");
