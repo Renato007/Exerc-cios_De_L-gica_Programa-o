@@ -1,19 +1,28 @@
 <meta charset="UTF-8" />
+<h1>Jogo - Adivinhe o número</h1>
+<h2>A quatro valores entre 1 até 10 possíveis que serão verificados</h2>
 <input />
 <button>Comparar com o segredo</button>
 <script>
-  var segredo = Math.round(Math.random() * 10);
+  var segredos = [2, 6, 8, 10];
+  //var segredo = Math.round(Math.random() * 10);
   var input = document.querySelector("input");
   input.focus();
 
   function verificar() {
-    if (segredo == input.value) {
-      alert("Você acertou o número, parabéns!!!");
-    } else alert("Você errou tente outra vez!");
-    input.value = "";
-    input.focus();
+    for (posicao = 0; posicao < segredos.length; posicao++) {
+      if (input.value == segredos[posicao]) {
+        alert("Você acertou o número, parabéns!!!");
+        break;
+      } else {
+        alert("Errou valor sorteado posição " + (posicao+1));
+      }
+    }
+
+      input.value = "";
+      input.focus();
   }
-  
+
   var button = document.querySelector("button");
   button.onclick = verificar;
 </script>
