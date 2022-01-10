@@ -4,26 +4,42 @@
 <input />
 <button>Comparar com o segredo</button>
 <script>
-var nivelDificuldade = prompt("Digite a quatidade de valores secretos.\n Aumente suas chances colocando mais. \n Colocando valor menor mais dificil fica.")
-
+  var nivelDificuldade = prompt(
+    "Digite a quatidade de valores secretos.\n Aumente suas chances colocando mais. \n Colocando valor menor mais dificil fica."
+  );
 
   function sorteia() {
     return Math.round(Math.random() * 10);
   }
 
-  function sorteiaNumeros(quantidades) {
+  function sorteiaNumeros(quantidade) {
     var segredos = [];
     var numero = 1;
 
-    while (numero <= quantidades) {
-      segredos.push(sorteia());
-      numero++;
+    while (numero <= quantidade) {
+      var numeroAleatorio = sorteia();
+      //caso 02 - resolve o problema do zero não poder aparecer  na lista de segredos
+      if (numeroAleatorio != 0) {
+        var achou = false;
+        // caso 01 -resolve o problema da repetição de numero na lista de segredos
+        for (var posicao = 0; posicao < segredos.length; posicao++) {
+          if (segredos[posicao] == numeroAleatorio) {
+            achou = true;
+            break;
+          }
+        }// caso 01
+
+        if (achou == false) {
+          segredos.push(numeroAleatorio);
+          numero++;
+        }
+      }// caso 02
     }
     return segredos;
   }
 
   var segredos = sorteiaNumeros(nivelDificuldade);
-console.log(segredos);
+  console.log(segredos);
   var input = document.querySelector("input");
   input.focus();
 
