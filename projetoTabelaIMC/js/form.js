@@ -10,6 +10,13 @@ botaoAdicionar.addEventListener("click", function (event) {
   var paciente = obtemPacienteDoFormulario(form);
   console.log(paciente);
 
+//impedir que sejá inserido paciente invalido
+  if (!validaPaciente(paciente)){
+    console.log("Paciente inválido");
+    return;// força a saida do else sem, precisar entrar na tabela. 
+  }
+
+
   // criar a tr a td do paciente
   var pacienteTr = montarTr(paciente);
   
@@ -55,4 +62,11 @@ function montarTd(dado, classe) {
   td.classList.add(classe);
 
   return td;
+}
+function validaPaciente(paciente){
+if(validaPeso(paciente.peso) ){
+  return true;
+}else {
+  return false;
+}
 }
