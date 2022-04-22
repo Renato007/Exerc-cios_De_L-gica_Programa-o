@@ -14,8 +14,7 @@ botaoAdicionar.addEventListener("click", function (event) {
     return; // força a saida do else sem, precisar entrar na tabela.
   }
 
-  // criar a tr a td do paciente
-  var pacienteTr = montarTr(paciente);
+ 
 
   var erros = validaPaciente(paciente);
   console.log(erros)
@@ -25,16 +24,17 @@ botaoAdicionar.addEventListener("click", function (event) {
     exibeMensagensDeErro(erros);
     return;
   }
-
-  //adicionando o paciente na tabela
-  var tabela = document.querySelector("#tabela-pacientes");
-
-  tabela.appendChild(pacienteTr);
+  adicionaPacienteNaTabela(paciente);
   
   form.reset();
   var mensagensErro = document.querySelector("#mensagens-erros");
   mensagensErro.innerHTML = "";
 });
+function adicionaPacienteNaTabela(paciente){
+  var pacienteTr = montarTr(paciente);
+  var tabela = document.querySelector("#tabela-pacientes");
+  tabela.appendChild(pacienteTr);
+}
 
 function exibeMensagensDeErro(erros){
   var ul = document.querySelector("#mensagens-erros");
