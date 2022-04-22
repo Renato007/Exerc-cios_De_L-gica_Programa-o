@@ -15,17 +15,19 @@ campoFiltro.addEventListener("input", function () {
       var paciente = pacientes[i];
       var tdNome = paciente.querySelector(".info-nome");
       var nome = tdNome.textContent;
-      //console.log(nome); //mostra a lista dos nomes no for
-      if (nome != this.value) {
+
+      //regExp(o que você quer que ela busque? ; como ?)
+      var expressao = new RegExp(this.value, "i");
+      if(!expressao.test(nome)){
         paciente.classList.add("invisivel");
       } else {
         paciente.classList.remove("invisivel");
       }
     }
-  }else{
-    for(var  i = 0; i < pacientes.length; i++){
+  } else {
+    for (var i = 0; i < pacientes.length; i++) {
       var paciente = pacientes[i];
-      paciente.classList.remove("invisivel")
+      paciente.classList.remove("invisivel");
     }
   }
 });
