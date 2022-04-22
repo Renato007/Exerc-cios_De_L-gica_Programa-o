@@ -1,25 +1,28 @@
 var botaoAdicionar = document.querySelector("#buscar-pacientes");
 
-botaoAdicionar.addEventListener("click", function () {
-  console.log("buscando pacientes...");
-  var xhr = new XMLHttpRequest();
+botaoAdicionar.addEventListener("click", function() {
+    var xhr = new XMLHttpRequest();
 
-  xhr.open("GET", "https://api-pacientes.herokuapp.com/pacientes");
+    xhr.open("GET", "https://api-pacientes.herokuapp.com/pacientes");
 
-  /* quando estiver carregado (evento) faça(função)   */
-  xhr.addEventListener("load", function () {
-    var resposta = xhr.responseText;
-    var pacientes = JSON.parse(resposta); //"le todo o texto e entrega um objeto javascript "
+    xhr.addEventListener("load", function() {
+        var erroAjax = document.querySelector("#erro-ajax");
 
-    pacientes.forEach(function (paciente){
-        adicionaPacienteNaTabela(paciente);
+        if (xhr.status == 200) {
+            erroAjax.classList.add("invisivel");
+            var resposta = xhr.responseText;
+            var pacientes = JSON.parse(resposta);
 
+            pacientes.forEach(function(paciente) {
+                adicionaPacienteNaTabela(paciente);
+            });
+        } else {
+            erroAjax.classList.remove("invisivel");
+        }
     });
 
-  });
-  xhr.send(); //enviar a requisição para o browser
+    xhr.send();
 });
-
 
 //O objeto XMLHttpRequest é quem é responsável por fazer requisições HTTP assíncronas com Javascript
 
