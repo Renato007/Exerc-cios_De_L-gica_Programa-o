@@ -16,7 +16,8 @@ campoFiltro.addEventListener("input", function () {
       var tdNome = paciente.querySelector(".info-nome");
       var nome = tdNome.textContent;
 
-      //regExp(o que você quer que ela busque? ; como ?)
+      /* regExp() O primeiro parâmetro é o padrão (o texto da expressão regular, o que deve ser buscado) e o segundo parâmetro são uma ou mais flags (representando como queremos que a expressão regular busque). */
+
       var expressao = new RegExp(this.value, "i");
       if(!expressao.test(nome)){
         paciente.classList.add("invisivel");
