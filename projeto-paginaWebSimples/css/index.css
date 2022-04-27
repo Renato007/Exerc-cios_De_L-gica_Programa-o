@@ -10,12 +10,12 @@ body{
     background: #CCCCCC;
     padding: 30px;
 }
-
-h1{
-    text-align: center;
-    height: 150px;
-    border: 10px solid #000000; 
+.titulo-principal{
+    padding-left: 30px;
 }
+.titulo-centralizado{
+    text-align: center;
+    }
 p{
     text-align: center; 
 }
@@ -34,9 +34,7 @@ em strong{
     background: white;
     padding: 20px;
 }
-.beneficio h2 {
-    text-align: center;
-}
+
 ul{
     display:inline-block; /* trabalha com a caixa */
     vertical-align: top; /* trabalha com a linha de base */
