@@ -1,0 +1,14 @@
+header{
+    background: #bbbbbb;
+}
+nav li{
+    display: inline;
+    margin: 0 0 0 15px; /* top | right | bottom | left */
+}
+nav a{
+    text-transform: uppercase; /* transforma em caixa alta */
+    color: #000000;
+    font-weight: bold; /* peso da font */
+    font-size: 22px;
+    text-decoration: none;/* para remover a decoração linha */
+}
