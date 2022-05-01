@@ -1,0 +1,64 @@
+header {
+  background: #bbbbbb;
+  padding: 20px 0; /* vertical | horizontal */
+}
+.caixa {
+  position: relative;
+  width: 940px;
+  margin: 0% auto; /* vertical | horizontal */
+}
+nav {
+  position: absolute; /* elemento absoluto em relação a página ou dentro do conteiner relativo */
+  top: 110px;
+  right: 0;
+}
+nav li {
+  display: inline;
+  margin: 0 0 0 15px; /* top | right | bottom | left */
+}
+nav a {
+  text-transform: uppercase; /* transforma em caixa alta */
+  color: #000000;
+  font-weight: bold; /* peso da font */
+  font-size: 22px;
+  text-decoration: none; /* para remover a decoração linha */
+}
+nav a:hover {
+  color: #c78c19;
+  text-decoration: underline;
+}
+main {
+  width: 940px;
+  margin: 0 auto;
+}
+
+form {
+  margin: 40px 0;
+}
+
+form label,
+form p {
+  display: block;
+  font-size: 20px;
+  margin: 0 0 10px;
+}
+.input-padrao {
+  display: block;
+  margin: 0 0 20px;
+  padding: 10px 25px;
+  width: 50%;
+}
+.checkbox{
+    margin: 20px 0 ;
+}
+
+footer {
+  text-align: center;
+  background: url("../img/bg.jpg");
+  padding: 40px 0;
+}
+.copyright {
+  color: #ffffff;
+  font-size: 13px;
+  margin: 20px 0 0;
+}
