@@ -79,3 +79,16 @@ footer {
   background: darkorange;
   transform: scale(1.2) ;/* scale(1.2) rotate(360deg) posso ter mais de uma ao mesmo tempo */
 }
+table{
+  margin: 20px 0 10px 0 ;
+}
+thead{
+  background: #555555;
+  color: #ffffff;
+  font-weight: bold;
+}
+td, th{
+  border: 1px solid #000000;
+  padding: 15px 8px;
+  text-align: center;
+}
