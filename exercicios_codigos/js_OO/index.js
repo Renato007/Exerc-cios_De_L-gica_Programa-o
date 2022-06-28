@@ -15,13 +15,15 @@ contaCorrenteRenato.cliente = cliente1;
 contaCorrenteRenato.depositar(500);
 
 const conta2 = new ContaCorrente();
-conta2.cliente =cliente2;
+conta2.cliente = cliente2; // verifica se é do tipo cliente caso não é  aparecera undefined
 conta2.agencia = 102;
 
-let valor = 100
+let valor = 100;
 
 contaCorrenteRenato.transferir(valor, conta2);
 
-console.log("valor: ", valor);
-console.log(conta2);
+//conta2.saldo = 400; //provoca erro não deixa alterar apenas pegar
 console.log(contaCorrenteRenato);
+console.log(conta2);
+console.log(conta2.saldo);
+console.log(contaCorrenteRenato.saldo);
