@@ -11,7 +11,7 @@ this._agencia = agencia;
         }
       }
       depositar(valor) {
-        if (valor <= 0) return;
+        if (valor <= 100) return;
         this._saldo += valor;
       }
       transferir(valor, conta) {
