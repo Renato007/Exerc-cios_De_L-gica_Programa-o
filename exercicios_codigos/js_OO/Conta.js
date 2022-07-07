@@ -36,4 +36,7 @@ export class Conta {
     const valorSacado = this.sacar(valor);
     conta.depositar(valorSacado);
   }
+  teste(){
+    console.log("na classe conta")
+  }
 }
