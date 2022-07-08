@@ -2,7 +2,7 @@
 export class Conta {
   constructor(saldoInicial, cliente, agencia) {
     if (this.constructor == Conta) {
-      throw new Error("Você não pode instanciar um objeto de tipo conta");
+      throw new Error("Você não pode instanciar um objeto de tipo conta, pois é uma classe abstrada");
     }
     this._saldo = saldoInicial;
     this._cliente = cliente;
@@ -22,10 +22,9 @@ export class Conta {
   get saldo() {
     return this._saldo;
   }
-
+// metodo abstrado serve apenas para ser sobrescrito
   sacar(valor) {
-    let taxa = 1;
-    return this._sacar(valor, taxa);
+throw new Error("O Método Sacar da conta é abstrato")
   }
   _sacar(valor, taxa) {
     const valorSacado = taxa * valor;
